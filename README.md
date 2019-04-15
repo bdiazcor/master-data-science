@@ -1,5 +1,5 @@
-# master-data-science
+# Notebook for a "to-be" Data Scientist
 
-Comenzamos una historia de Data
+In this repository I will post the exercises and documents that I produce during my 8 months data science master (Ap-Nov 2019).
 
-Probando un "PULL" desde el master remoto
+I will create new folders for each specific subject.

@@ -5,5 +5,7 @@ In this repository I will post the exercises and documents that I produce during
 I will create new folders for each specific subject.
 
 Index:
-01_GIT & Command line basics
-02_Python
+Class01 GIT repository
+Class02 Basic Linux Command line 1
+Class03 Basic Linux Command line 2
+Class04 Python 1: managing Jupyter Notebook

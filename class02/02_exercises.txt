@@ -1,0 +1,113 @@
+ 
+  1502	mkdir second_dir >>> Create second_dir instead %%%%%%%%%%%%%%
+  1503	touch ./second_dir/text_file.txt %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  1504	cat ./second_dir/text_file.txt %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  1505	cd second_dir
+  1506	ll
+  1511	chmod g+x,o+w text_file.txt >>> to change permission separated by commas
+  1512	ll
+  1513	mkdir sub1 sub2 text_file
+  1514	ll
+  1515	cp text_file.txt ./sub1
+  1516	cd sub1
+  1517	ll
+  1518	cd ..
+  1519	cp text_file.txt ./sub2/text_file.txt.2
+  1520	cd sub2
+  1521	ll
+  1522	cd ..
+  1523	cp -r sub1 sub3
+  1524	ll
+  1525	cd sub3
+  1526	ll
+  1527	cd ..
+  1528	mv ./sub2/text_file.txt.2 ./sub2/text_file.txt.backup
+  1529	cd sub2
+  1530	ll
+  1531	cd ..
+  1532	cd sub3
+  1533	ll
+  1534	chmod o+x text_file.txt
+  1535	ll
+  1536	cd ..
+  1548	mv text_file.txt.backup .text_file.txt.backup
+  1549	ll
+  1550	ll -a
+  1551	rm -r sub2
+  1552	ll
+  1553	cd ~/Data/shell
+  1554	less Finn.text
+  1555	ll
+  1556	less Finn.txt
+  1557	cd ../opentraveldata
+  1558	less optd_aircraft.csv
+  1565	find -maxdepth 2 -type d | wc -l
+  1566	man tree
+  1567	sudo apt-get install tree
+  1568	man tree
+  1569	tree -L 2
+  1570	less optd_aircraft.csv
+  1571	cd Data/opentraveldata/
+  1572	ll
+  1573	less optd_aircraft.csv
+  1574	cd ../shell
+  1579	cat -n Text_example.txt > Text_example.txt.n
+  1580	cat Text_example.txt.n
+  1581	mv Text_example.txt Text_example.txt > Text_example.txt.3 >> error. You cannot move the same file twice. You must cp
+  1582	cp Text_example.txt Text_example.txt > Text_example.txt.3
+  1583	cat Text_example.txt Text_example.txt > Text_example.txt.3 >> with cat instead of copy to send to output
+  1585	cat Text_example.txt.3
+  1586	cat /etc/os-release
+  1587	echo "#This file is created by $USER"
+  1588	echo "#This file is created by $NAME"
+  1589	echo "#This file is created by $USER on: $(date)"
+  1594	echo "#This file is created by $USER on: $(date)"> timestamp_header.txt
+  1595	cat timestamp_header.txt
+  1608	cd opentraveldata
+  1609	ll
+  1610	ls -s 
+  1611	ls -ls 
+  1612	ls -lS 
+  1613	ls -lS | head -4 | tail -3
+  1614	ls -lS | head -4 | tail -3 > three_largest_file.txt2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  1615	ll
+  1616	less -S three_largest_file.txt2
+  1617	less -N three_largest_file.txt2 >>> N upper in less
+  1618	cat -N three_largest_file.txt2 >>> n lower in cat
+  1619	cat -n three_largest_file.txt2
+  1620	cd
+  1621	ll -a
+  1622	find .history
+  1623	cat .history
+  1624	tail -20 .history
+  1625	cat .history | tail -20 > ~/Data/history_last20.txt
+  1627	cd Data
+  1628	cat history_last20.txt
+  1629	head -3 ./shell/Text_example.txt
+  1630	wc ./shell/Text_example.txt
+  1631	head -n -3 ./shell/Text_example.txt
+  1632	head -n -3 ./shell/Text_example.txt | wc
+  1633	head -n -3 ./shell/Text_example.txt | tail -3 %%%%%%%%
+  1634	cat ./shell/Text_example.txt
+  1635	cat -n ./shell/Text_example.txt
+  1636	ll
+  1637	rm history_last20.txt
+  1638	ll
+  1639	echo $HISTFILE
+  1640	history
+  1642	history sudo history >>> == history !!
+  1643	history ! 1593
+  1644	history ll
+  1645	wc -l ./opentraveldata/optd_aircraft.csv
+  1646	head -5 ./shell/Finn.txt| wc -w
+  1647	find -type -f >>> error. not negative sign before f
+  1648	find -type f
+  1649	cd ..
+  1650	find . -type f -mmin 60
+  1651	find ~ -type f -mmin 60
+  1652	find ~ -mindepth 2 -type f -mmin -60 >>>> 2 levels %%%%%%%%
+  1689	find ~ -type f -empty ! -perm 777 -ok chmod 777 {} \; >>> be careful and separate words for it to work %%%%%%%
+  1657	find ~ -type f -empty ! -perm 777 -ok chmod 777 {}\; >>> error. \; not separated
+  1658	find ~ -type f -empty ! -perm 777 -ok chmod 777{}\; >>> error. {} and \; not separated
+  1687	find ~/Data -type d -exec echo {} \; -exec sh -c "ls -S {} | head -3" \; %%%%%%%%%%%%
+  

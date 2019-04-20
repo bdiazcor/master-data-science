@@ -1,0 +1,11 @@
+#git main commands
+git status #shows the branch you are in and if there is some changes between origin (repo Github) and local (your pc) to commit
+git  clone https://github.com/bdiazcor/master-data-science.git Repos/master-data-science2 #upload a new git repository
+git config --global user.email xxx@google.com
+git config --global user.name 
+git config --global user.name "Beatriz Diaz"
+git add README.md   #update changes 
+git commit #commit changes
+git push #publish commit in origin
+git pull #get updated repo
+git log #see last commits

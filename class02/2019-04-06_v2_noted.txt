@@ -1,0 +1,373 @@
+﻿sed -i 's/\$COLOR_CONNECTIONS//' ~/.zshrc 
+ls
+ls Data
+mkdir Repos
+ls
+cd Repos
+ls
+git clone https://github.com/iht/master-data-science.git
+ls
+cd master-data-science
+cd ..
+cd master-data-science
+ls
+emacs README.md
+echo $EDITOR
+vi
+vim
+emacs README.md
+git status
+git add README.md
+git status
+git config --global user.email ihr@google.com
+git config --global user.name 
+git config --global user.name "Israel Herraiz"
+git commit
+git push
+git pullwh
+cat README.md
+git status
+git pull
+cat README.md
+git log
+whoami
+printenv $USER
+printenv USER
+history
+printenv USER
+printenv
+printenv HOST 
+echo Welcome to Master 
+echo "Welcome to Master"
+echo "My home dir is $HOME" >> "" ejecuta: $ identifies a variable
+echo My home dir is $HOME 
+echo 'My home dir is $HOME' >> with ', no ejecuta. Variable in CAPITALS 
+echo `My home dir is $HOME` 
+date >> function that gives the date
+echo `date` >> ` ejecuta la funcion
+echo "date" >> imprime texto entre “”
+echo 'date' >> imprime texto entre ‘’
+echo "$date" >> como date no es una variable, con “” se imprime texto
+echo "$(date)" >> ejecuta una funcion entre ()
+echo "This is one" \\ >> \ rompe la línea de comandos y sigue en otra línea
+echo "This is one" \\
+"and this is otner line"
+echo "This is one  \
+and this is other"
+echo "This is one  \
+and this \
+\
+\
+\
+\
+\
+
+
+ONE=1 >> declaro una variable
+echo $ONE
+ONE=1
+echo $ONE
+ONE=2 >> se sobreescribe variables
+echo $ONE
+cat /etc/os-release >> sistema operativo
+cat /home/dsc/Data/shell/Text_example.txt >> muesta el contenido del fichero en un dir
+cat ~/Data/shell/Text_example.txt >> muestra el contenido de un fichero desde home
+cd Data >> va a un dir
+cat ./shell/Text_example.txt >> ./ indica el dir actual
+cd ./
+cd .. >> baja un nivel
+cd - >> vuelve a directorio en el que estaba antes del último cdcd 
+cd ~/Documents >> va directamente a dir Documents de home
+cd -
+cd Data
+cat shell/Text_example.txt
+cd -
+cd Desktop
+cat ../Data/shell/Text_example.txtcat >> otra manera de direccionar al contenido de un file
+cat ./../Data/shell/Text_example.txt >> otra manera de direccionar al contenido de un file
+cd >> simepre vuelve a Home
+cd ..
+cd
+cd Data/shell
+cat -n Text_example.txt > numera las líneas de un fichero
+cat -n Text_example.txt Text_example.txt Text_example.txt >> concatena los tres files y los numera
+pwd >> indicar el directorio en el que estas
+echo $PWD >> igual que pwd
+echo "$PWD" >> igual que pwd 
+echo "\$PWD" >> ignora el contenido de variable/cmd
+cd
+ls >> lista los contenidos de un directorio (nombre)
+ls -1 >> te muesta los contenidos de un directorio (nombre) en modo lista
+ls -1 -s >> te muesta los contenidos de un directorio en modo lista con el tamaño
+ls -1s >> igual que el anterior
+ls -s1  >> igual que el anterior
+ls -s1a >> con -a muestra los fichero/dir ocultos .file o .dir/
+ls -sa 
+ls -la >> muestra todos los detalle, permisos, user, etc...
+ls -al .xscreensaver
+ls -al Desktop
+cd
+touch file1.txt >> crea un fichero
+ll
+ls -l
+alias >> acorta los comandos con un alias (ej: ll = ls -l)
+alias gs="git status"
+gs
+alias
+cat .zshrc >> fichero de configuración
+cd
+cd Repos
+cd master-data-science
+ls -a
+cd // >> va al directorio raiz
+cd ..
+rm -rf repo_nuevo ->> borro recursivamente sobre el directorio sin peguntar
+git init nombre >> inicializa un nuevo repositorio git en .git
+cd nombre
+rm -r .git >> borro recursivamente sobre el directorio. Borro el repositorio 
+cd
+cd -
+cd ../master-data-science
+ls
+gl
+git log
+cd 
+ls
+ls -a 
+ls -al1 
+ls -al1S 
+ls -al1t
+ls -al1Sr 
+ls -l file1.txt file1.txt
+chmod u+x file1.txt
+ls -l file1.txt file1.txt
+ls -l file1.txt
+chmod u-r,g+x,o+w file1.txt
+ls -l file1.txt
+chmod o-rw file1.txt
+ls -l file1.txt
+chmod 377 file1.txt
+ls -l file1.txt
+chmod 777 file1.txt
+mkdir first_dir
+cd first_dir
+ls
+mkdir one two >> crea dos directorios one y two
+ll
+mkdir three/two/one >> no hace nada
+mkdir -p three/two/one >> permite crear directorios y hacer ramas sobre este
+touch file2
+ls
+cp file2 file2_copia >> se copia un fichero en otro pero no se aseguran los permisos
+ll
+cp ./file2 ./three/ >> copia un fichero a un directorio
+ls three 
+cp file2 file2 >> 
+cp file2 ~/first_dir/file3
+cp file2 file2 file2 file2_copia ./one
+cp file2 file2_copia ./two
+cp -r two two_copy >> copia recursivamente de un dir a otro
+ll
+touch file_3
+ll
+chmod 777 file_3
+ll
+cp file_3 file_3_copy 
+ll
+ls -l file_3 file_3_copy 
+cp -p file_3 file_3_copy2 >> con -p mantengo los permisos/atributos
+cp -p file_3 file_3_copy file_3_copy2 
+ll
+ls file_3 file_3_copy file_3_copy2 
+ls -l file_3 file_3_copy file_3_copy2 
+mv file_3_copy2 file_good_one
+ll
+mv file2 file2_copia file3 file_3 file_3_copy file_good_one one
+rm -r one >> -r es recursivo
+rm -rf three >> -f -> lo fuerza
+ll
+cd 
+rm -r first_dir
+ll
+\
+
+
+mkdir first_dir
+cd first_dir
+touch text_file.txt
+chmod u+x, g+x,o+w text_file.txt >> u = user, g=group, o=other
+mkdir sub1 sub2 text_file
+cp -r text_file.txt sub1
+mv text_file.txt sub2/text_file.txt.2
+cp -r sub1 sub3 >> copia un directorio de uno a otro
+mv sub2/text_file.txt.2 sub2/text_file.txt.backup
+ll
+ll -a
+cd sub3
+ll
+cp -r sub1 sub3/
+cp -r sub2 sub3/
+cd ..
+cp -r sub2 sub3/
+ll sub3
+cd
+cd Data/shell
+cat Finn.txt
+less Finn.txt >> te permite moverse por el fichero
+less -N Finn.txt >> numera
+less -S Finn.txt >> truncate al tamaño de la línea
+cd ../challenge
+ll
+cd //
+cd ..
+cd -
+cd home/dsc/Data/challenge   
+ll
+cd ..
+cd opentraveldata
+ll
+less optd_por_public.csv
+less -N optd_por_public.csv
+less -N -S optd_por_public.csv >> se usa para revisar la pinta que tiene un fichero grande
+man cd >> manual. Error. No existe entrada para cd
+man bash
+which ls >> binary under execution
+which python 
+sudo which python >> gives execution rights
+whereis python >> location of the binary and manuals
+whereis cd
+whereis ls
+whereis man
+whereis python
+which python
+echo $PATH
+dkjdlkjgldfkjg
+this is the text editor
+cd Data/opentraveldata
+ll
+cat optd_aircraft.csv
+head optd_aircraft.csv
+head 5 optd_aircraft.csv
+head -5 optd_aircraft.csv >> muestra las 5 primeras líneas
+head -n 5 optd_aircraft.csv >> igual que el anterior
+head -n -5 optd_aircraft.csv >> muestra todo el fichero menos las 5 últimas líneas
+wc optd_aircraft.csv >> counts lines, words and characters 
+head -n -450 optd_aircraft.csv
+head 5 optd_aircraft.csv >> asume que "5" es un fichero"
+head -2 optd_aircraft.csv optd_airlines.csv >> head command on two files
+tail optd_aircraft.csv >> last 10 lines of the file
+tail -4 optd_aircraft.csv >> las 4 lines of the files
+tail -n -4 optd_aircraft.csv >> same as before
+tail -n 4 optd_aircraft.csv >> same as before
+tail -n +4 optd_aircraft.csv >> whole files less 4 first lines
+cd ../shell
+cat Text_example.txt
+tail -n +2 optd_aircraft.csv
+tail -n +2 Text_example.txt
+tail -n +3 Text_example.txt
+echo "Hello"
+echo "Hello" > file_hello.txt >> overwrites a file
+cat file_hello.txt
+echo "Hello" >> file_hello.txt >> concatenates a file
+cat file_hello.txt
+cat -n Text_example.txt 
+cat -n Text_example.txt | head -5 
+cat -n <Text_example.txt head -5 >> to concatenate commands a pipe is necesary
+cat -n <Text_example.txt | head -5 >> same output as cat -n Text_example.txt | head -5: 5 first lines of file sent to comand cat -n
+wc Text_example.txt >> word count of Text_example: lines words characters
+head -5 Text_example.txt| wc
+wc -l Text_example.txt >> counts lines
+wc -w Text_example.txt >> counts words
+wc -c Text_example.txt >> counts bytesll
+head -5 Finn.txt | wc -w >> counts the words of the first 5 lines of the file Finn
+cd 
+cd Data/us_dot/otp
+ll
+cd ..
+ll
+ls traffic
+cd ..
+ll
+ls airline_tickets
+ls us_dot
+ls opentraveldata
+cd opentraveldata
+ls 
+ls -l
+ls -lS >> sorted by size
+ls -lS | head 4
+ls -lS | head -4 >> fist 4 lines (because the first line contains the total of the directory)
+ls -lS | head -4 | tail -3 >> last 3 lines of the first 4 lines
+ls -lS | head -4 | tail -3 >three_largest_file.txt >> last 3 lines of the first 4 lines in file 
+cd
+find 
+cd Data
+find >> looks for a file 
+find . >> files in current directory
+find ~ >> files in home (with all the branches)
+cd
+find . -name "text_file" >> looks for a file with name text_file in current directory
+find . -name "text_file*" >>  looks for a file that starts with name text_file in current directory
+find .
+find .  
+find . -name "text_file*" -maxdepth 5 >> max directory levels =5
+find . -maxdepth 5 | wc -l >> counts the number of files at 5 levels
+find . | wc -l
+find . -iname "text_file*" >> iname is case insensitive
+find . -iname "text_file*" -type d >> type directory
+find . -iname "text_file*" -type f >> type file
+find . -iname "text_file*" -type f -perm 777
+find . -iname "text_file*" -type f ! -perm 777 >> permisos diferentes a 777
+find . -iname "text_file*" -type f -empty >> vacios
+find .  -type f -size 10M | wc -l >> it doesn't work. We must add the "+" to the size
+find .  -type f -size +10M | wc -l
+find .  -type f -size -10k | wc -l
+find .  -mmin -60 >>  en los ultimos 60 min
+find .  -mtime -1 >> en el ultimo dia
+find . -iname "text_file*" -type f 
+find . -iname "text_file*" -type f -exec echo "FOUND" \; >> executes the command in every line
+echo ahora echo esto
+echo ahora; echo esto >> with ";" we separate commands
+
+find . -iname "text_file*" -type f -exec echo "FOUND" \; -exec echo YESS \; >> \; indicates the end of a command. You need the backslash to scape the ; 
+
+find . -iname "text_file*" -type f -exec echo "FOUND" 
+find . -iname "text_file*" -type f -exec echo "FOUND" ;
+find . -iname "text_file*" -type f -exec echo "FOUND" \;
+find . -iname "text_file*" -type f -exec ls -l {} \; >> all ocurrences in {} are replaced by files. {} means "the output of find". As in, "whatever find found". find returns the path of the file you're looking for, right? So {} replaces it; it's a placeholder for each file that the find command locates (taken from here).
+
+find . -iname "text_file*" -type f 
+ls -l ./first_dir/sub1/text_file.txt
+find . -iname "text_file*" -type f 
+find . -iname "text_file*" -type f -exec ls -l {} \; 
+find . -iname "text_file*" -type f -exec ls -l {} \; -exec echo FOUND \;
+find . -iname "text_file*" -type f -exec ls -l {} \; -exec ls -s {} \;
+find . -iname "text_file*" -type f -exec "ls -l {}" \;
+find . -iname "text_file*" -type f -exec "ls -l {} | wc -l" \;
+find . -iname "text_file*" -type f -exec sh -c "ls -l {}" \; >> t
+find . -iname "text_file*" -type f -exec bash -c "ls -l {}" \; 
+bash
+echo $0 >> current shell
+cd Repos/
+cd master-data-science/
+sh
+find . -iname "text_file*" -type f -exec sh  "ls -l {}" \; >> error. you need a "-c" to indicate that a command comes after
+find . -iname "text_file*" -type f -exec sh -c "ls -l {}" \; >> you run a sh instance, then start command as a child of that sh instance. When command finishes, the sh instance also finishes.
+find . -iname "text_file*" -type f -exec zsh -c "ls -l {}" \;
+zsh
+cd Repos
+find . -iname "text_file*" -type f -exec zsh -c "ls -l {} | wc " \;
+find . -iname "text_file*" -type f -exec ls -l {} \; -exec echo FOUND \;
+find . -iname "text_file*" -type f -exec sh -c "ls -l {}" \; -exec echo FOUND \;
+find . -iname "text_file*" -type f -exec sh -c "ls -l {} | wc " \; -exec echo FOUND \;
+cd
+find type -f -mmin -60 | wc 
+find -type f -mmin -60 | wc 
+find . -type f -mmin -60
+find . -mindepth 2 -type f -mmin -60
+find . -mindepth 1 -type f -mmin -60
+find . -mindepth 2 -type f -mmin -60
+find . -mindepth 2 -type f -mmin -600
+cd
+cat .history
+cat .history > 2019-04-06.txt

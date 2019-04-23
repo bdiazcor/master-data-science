@@ -1,0 +1,11 @@
+find ~ -type f -size +10M -exec ls -sh {} \; | sort -nr | head #Sorting & counting ex 1.1
+
+#sorting & counting ex. 2
+seq 15>20lines.txt
+seq 9 1 20>>20lines.txt
+echo "20\n20">>20lines.txt
+cat 20lines.txt
+sort -d 20lines.txt
+sort -nu 20lines.txt
+sort -n 20lines.txt | uniq -dc | tail -1 
+

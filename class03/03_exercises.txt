@@ -9,3 +9,30 @@ sort -d 20lines.txt
 sort -nu 20lines.txt
 sort -n 20lines.txt | uniq -dc | tail -1 
 
+#sorting & counting ex.3
+sort -nu 20lines.txt 20lines2.txt > 20lines_wo_dup.txt 
+
+#sorting & counting ex.4
+sort -t "^" -k 7nr,7 optd_aircraft.csv | head -1         
+
+#processing & filtering ex.2
+cat optd_aircraft.csv | tr "^" "," > optd_aircraft_comma.csv #1
+cat optd_aircraft.csv | tr -s " " | wc  #2. vs cat optd_aircraft.csv | wc -> compare size in bytes
+head -n 1 optd_por_public.csv | tr "^" "\n" | wc -l #3
+paste <(seq 46) <(head -n 1 optd_por_public.csv | tr "^" "\n") #print column names together with column number
+
+#4
+head -n 1 optd_airlines.csv | tr "^" "\n" | wc -l #count columns in optd_airlines
+paste <(seq 46) <(head -n 1 optd_por_public.csv | tr "^" "\n") # print nubers with column names
+cat optd_airlines.csv | cut -d "^" -f 8,14 | sort -t "^" -k 2nr,2 |head -1 # I select columns names and flt and order by flt reverse, taking the first line
+
+#5
+cat optd_airlines.csv | cut -d "^" -f10 | sort | uniq -c | sort -rn
+
+
+
+
+
+
+
+

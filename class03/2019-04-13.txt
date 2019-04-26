@@ -316,7 +316,7 @@ csvstat -d "^" optd_aircraft.csv
 csvstat -d "^" optd_aircraft.csv | less -S
 csvstat -d "^" -c manufacturer optd_aircraft.csv | less -S
 csvstat -d "^" -c 6 optd_aircraft.csv | less -S
-csvcut -c manufacturer optd_aircraft.csv | less -S
+csvcut -c manufacturer optd_aircraft.csv | less -S #it doesn work. You need to indicate the delimiter
 csvcut -d "^" -c manufacturer optd_aircraft.csv | less -S
 csvcut -d "^" -c manufacturer,iata_code optd_aircraft.csv | less -S
 csvcut -d "^" -D "^" -c manufacturer,iata_code optd_aircraft.csv |less -S
@@ -335,8 +335,8 @@ cat create_table.sql
 kwrite ./create_table.sql
 csvsql -d "^" -i oracle optd_por_public.csv | less 
 csvsql -d "^" -i mysql optd_por_public.csv | less 
-python
-ipython
+python #python interpreter
+ipython #enhanced interactive python
 cd
 cd Python_notebooks
 jupyter-notebook

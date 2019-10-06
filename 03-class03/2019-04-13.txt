@@ -4,19 +4,19 @@ seq 1 2 10
 seq 1 2 10 > uniq_example.txt
 seq 1 10 >> uniq_example.txt
 cat uniq_example.txt
-uniq uniq_example.txt
-sort uniq_example.txt
+uniq uniq_example.txt #compares with next
+sort uniq_example.txt #alphanumerical ordering
+sort -n uniq_example.txt #numerical ordering
+sort uniq_example.txt | uniq 
+sort uniq_example.txt | uniq -d #print only duplicated lines
+sort uniq_example.txt | uniq -c #count number of ocurrences
 sort -n uniq_example.txt
-sort uniq_example.txt | uniq
-sort uniq_example.txt | uniq -d 
-sort uniq_example.txt | uniq -c
-sort -n uniq_example.txt
-sort -nr uniq_example.txt
-sort -u uniq_example.txt
+sort -nr uniq_example.txt #r for revese ordering
+sort -u uniq_example.txt #sort unique values
 cd ../opentraveldata
 ll
 head optd_aircraft.csv
-sort -t "^" -k 6r optd_aircraft.csv | head
+sort -t "^" -k 6r optd_aircraft.csv | head #delimeter "^" and orders by 6th column in reverse order
 sort -t "^" -k 6 optd_aircraft.csv | head
 sort -k 6 optd_aircraft.csv | head
 sort -k 6r optd_aircraft.csv | head
@@ -56,16 +56,14 @@ find ~ -type f -size +10M -exec ls -sh {} \;
 find ~ -type f -size +10M -exec ls -sh {} \; | sort -n | head 
 find ~ -type f -size +10M -exec ls -sh {} \; | sort -nr | head 
 cd -
-cut -d "^" -f 1-3,5 optd_aircraft.csv| head 
-cut -d "^" -f 1-3, 5 optd_aircraft.csv| head 
-cut -d "^" -f 1-3,5 --output-delimiter ";"  optd_aircraft.csv | head
+cut -d "^" -f 1-3,5 optd_aircraft.csv| head #slice columns per delimeter
+cut -d "^" -f 1-3,5 --output-delimiter ";"  optd_aircraft.csv | head #changes delimeter
 cut -d "^" -f 1-3,5 --output-delimiter "DELIMITER"  optd_aircraft.csv | head
-cut -d "^" -f 1-3,5 --output-delimiter "DELIMITER"  optd_aircraft.csv | head | cut -d "DELIMITER" -f 1
+cut -d "^" -f 1-3,5 --output-delimiter "DELIMITER"  optd_aircraft.csv | head | cut -d "DELIMITER" -f 1 #DELIMITER must be a single character
 cut -d "^" -f 1-3,5 --output-delimiter ";"  optd_aircraft.csv | head | cut -d ";" -f 1
 cut -d "^" -f 1-3,5 --output-delimiter " ;"  optd_aircraft.csv | head | cut -d ";" -f 1
-seq 10 | paster
-seq 10 | paste
-seq 10 | paste -s
+seq 10 | paste #concatenates horizontally
+seq 10 | paste -s 
 seq 10 | paste -s -d "^"
 seq 10 | paste -s -d "\t"
 seq 10 | paste - - -
@@ -81,7 +79,7 @@ paste  numbers numbers
 paste Text_example.txt Text_example.txt
 paste numbers Text_example.txt
 cat numbers
-cat number Text_example.txt| paste 
+cat number Text_example.txt| paste #paste concurrently
 paste numbers Text_example.txt
 head numbers Text_example.txt
 head <numbers <Text_example.txt
@@ -90,26 +88,25 @@ head -15 <(cat numbers) <(cat Text_example.txt)
 paste <(cat numbers) <(cat Text_example.txt)
 paste numbers Text_example.txt
 head numbers Text_example.txt
-head <(cat numbers) <(cat Text_example.txt)
+head <(cat numbers) <(cat Text_example.txt) #executes cmd in ()
 paste <( seq 1 10) <(cat Text_example.txt)
 paste <( seq 1 30) <(cat Text_example.txt)
-echo "master data science" | tr a b
+echo "master data science" | tr a b #converts a into b
 echo "master data science" | tr a A
 echo "master data science" | tr ab BA
 echo "master data science" | tr "ab" "BA"
 echo "master data science" | tr ^ B
 echo "master data science" | tr "^" B
-echo "    master      data    science" |  tr -s 
-echo "    master      data    science" |  tr -s " " 
+echo "    master      data    science" |  tr -s " " #squeezes/deleter character between " "
 echo "    master      data  aaaaaaaaa   science" |  tr -s "a" 
 echo "    master      data  aaaaaaaaa   science" |  tr -d "a" 
 cat ../opentraveldata/optd_aircraft.csv | tr "^" ";" | head
 cd ../opentraveldata
 cat optd_aircraft.csv | tr "^" ";" >optd_aircraft_del_chanaged.csv 
-cat optd_aircraft_del_chanaged.csv | head
+cat optd_aircraft_changed.csv | head
 head -1 optd_por_public.csv 
-head -1 optd_por_public.csv  | tr "^" "\n"
-head -1 optd_por_public.csv  | tr "^" "\n" | wc -l 
+head -1 optd_por_public.csv  | tr "^" "\n" #fields
+head -1 optd_por_public.csv  | tr "^" "\n" | wc -l #counts number of fields 
 paste <(seq 46) <(head -1 optd_por_public.csv|tr "^" "\n")
 paste <(seq 46) <(head -1 optd_por_public.csv|tr "^" "\n") | head
 paste <(seq 46) <(head -1 optd_por_public.csv|tr "^" "\n") | less
@@ -118,13 +115,12 @@ vi
 cd -
 grep this Text_example.txt
 grep "this" Text_example.txt
-grep -v "this" Text_example.txt
-grep "this" Text_example.txt
-grep -i "this" Text_example.txt
-grep -c "this" Text_example.txt
-grep -ci "this" Text_example.txt
+grep -v "this" Text_example.txt #select non matching lines
+grep -i "this" Text_example.txt #case unsensitive
+grep -c "this" Text_example.txt #number of lines matching the pattern
+grep -ci "this" Text_example.txt 
 grep -cvi "this" Text_example.txt
-grep -ni "this" Text_example.txt
+grep -ni "this" Text_example.txt #lines numbering
 cat Text_example.txt
 grep -vi "this" Text_example.txt
 grep -vi -A 3 "this" Text_example.txt
@@ -147,7 +143,6 @@ grep -E "Complete\$" Finn.txt
 grep -E "Complete$" Finn.txt
 seq 5 5 10
 seq 5 5 20
-seq 5 5 20 | grep "[1-5]{2}"
 seq 5 5 20 | grep -E "[1-5]{2}"
 seq 5 5 20 | grep -E "[5]"
 seq 5 5 20 | grep -E "[5]{4}"
@@ -168,20 +163,17 @@ echo Sunday | sed s/day/night/
 echo Sunday.day | sed s/day/night/
 echo Sunday.day | sed s/day/night/g
 echo SunDay.day | sed s/day/night/g
-echo SunDay.day | sed -i s/day/night/g
-echo SunDay.day | sed  s/day/night/gI
-echo SunDay.day | sed s/day/night/g
-echo SunDay.day | sed  s/day/night/gI
+echo SunDay.day | sed -i s/day/night/g #it doesn work. This sintax is for files
+echo SunDay.day | sed  s/day/night/gI #case unsensitive
 echo SunDay.day  > sunday.txt
 sed -i s/day/night/gI sunday.txt
 cat sunday.txt
 seq 10 15
-seq 10 15 | sed '3d'
-seq 10 15 | sed '/13/d'
-seq 10 15 | sed '/5/d'
-seq 10 15 | sed '2p'
+seq 10 15 | sed '3d' #deletes 3rd digit
+seq 10 15 | sed '/13/d' #deletes "13"
+seq 10 15 | sed '/5/d' #deletes entry with "5"
+seq 10 15 | sed '2p' 
 seq 10 15 | sed -n '2p'
-seq 10 15 | sed -n '2-4p'
 seq 10 15 | sed -n '2,4p'
 cp Text_example.txt Text_example.copy.txt
 sed s/line/\n/g Text_example.txt
